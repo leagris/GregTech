@@ -44,7 +44,7 @@ public class MetaTileEntityPyrolyseOven extends RecipeMapMultiblockController {
             .where('S', selfPredicate())
             .where('X', statePredicate(getCasingState()).or(abilityPartPredicate(ALLOWED_ABILITIES)))
             .where('C', statePredicate(MetaBlocks.WIRE_COIL.getState(CoilType.CUPRONICKEL)))
-            .where('#', blockPredicate(Blocks.AIR))
+            .where('#', isAirPredicate())
             .build();
     }
 

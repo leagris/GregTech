@@ -41,7 +41,7 @@ public class MetaTileEntityVacuumFreezer extends RecipeMapMultiblockController {
             .setAmountAtLeast('X', 20)
             .where('S', selfPredicate())
             .where('X', statePredicate(getCasingState()).or(abilityPartPredicate(ALLOWED_ABILITIES)))
-            .where('#', blockPredicate(Blocks.AIR))
+            .where('#', isAirPredicate())
             .build();
     }
 

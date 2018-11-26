@@ -241,7 +241,7 @@ public class MetaTileEntityPrimitiveBlastFurnace extends MultiblockControllerBas
             .aisle("XXX", "X#X", "X#X", "X#X")
             .aisle("XXX", "XYX", "XXX", "XXX")
             .where('X', statePredicate(getCasingState()))
-            .where('#', blockPredicate(Blocks.AIR))
+            .where('#', isAirPredicate())
             .where('Y', selfPredicate())
             .build();
     }

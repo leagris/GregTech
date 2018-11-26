@@ -39,7 +39,7 @@ public class MetaTileEntityImplosionCompressor extends RecipeMapMultiblockContro
             .setAmountAtLeast('X', 10)
             .where('S', selfPredicate())
             .where('X', statePredicate(getCasingState()).or(abilityPartPredicate(ALLOWED_ABILITIES)))
-            .where('#', blockPredicate(Blocks.AIR))
+            .where('#', isAirPredicate())
             .build();
     }
 

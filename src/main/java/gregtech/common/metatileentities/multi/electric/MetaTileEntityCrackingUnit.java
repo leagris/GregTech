@@ -13,6 +13,7 @@ import gregtech.api.render.Textures;
 import gregtech.common.blocks.BlockMetalCasing;
 import gregtech.common.blocks.BlockWireCoil.CoilType;
 import gregtech.common.blocks.MetaBlocks;
+import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 
@@ -41,7 +42,7 @@ public class MetaTileEntityCrackingUnit extends RecipeMapMultiblockController {
             .setAmountAtLeast('H', 20)
             .where('O', selfPredicate())
             .where('H', statePredicate(getCasingState()).or(abilityPartPredicate(ALLOWED_ABILITIES)))
-            .where('#', blockPredicate(Blocks.AIR))
+            .where('#', isAirPredicate())
             .where('C', statePredicate(getCoilState()))
             .build();
     }

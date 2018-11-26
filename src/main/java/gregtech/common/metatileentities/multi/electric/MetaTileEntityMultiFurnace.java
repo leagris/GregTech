@@ -82,7 +82,7 @@ public class MetaTileEntityMultiFurnace extends RecipeMapMultiblockController {
             .where('S', selfPredicate())
             .where('X', statePredicate(getCasingState()).or(abilityPartPredicate(ALLOWED_ABILITIES)))
             .where('C', MetaTileEntityElectricBlastFurnace.heatingCoilPredicate())
-            .where('#', blockPredicate(Blocks.AIR))
+            .where('#', isAirPredicate())
             .build();
     }
 

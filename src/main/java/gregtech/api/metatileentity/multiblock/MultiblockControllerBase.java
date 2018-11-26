@@ -11,6 +11,7 @@ import gregtech.api.multiblock.IPatternCenterPredicate;
 import gregtech.api.multiblock.PatternMatchContext;
 import gregtech.api.render.ICubeRenderer;
 import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.network.PacketBuffer;
@@ -113,6 +114,10 @@ public abstract class MultiblockControllerBase extends MetaTileEntity {
 
     public static Predicate<BlockWorldState> blockPredicate(Block... block) {
         return blockWorldState -> ArrayUtils.contains(block, blockWorldState.getBlockState().getBlock());
+    }
+
+    public static Predicate<BlockWorldState> isAirPredicate() {
+        return blockWorldState -> blockWorldState.getBlockState().getBlock().isAir(blockWorldState.getBlockState(),null,null);
     }
 
     public IPatternCenterPredicate selfPredicate() {
